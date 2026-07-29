@@ -1,0 +1,19 @@
+{
+  "production": {
+    "bundles": ["mathjslab-batch"],
+    "analyzer": {
+      "openAnalyzer": false
+    }
+  },
+  "development": {
+    "bundles": ["mathjslab-batch"],
+    "devServer": {
+      "open": false,
+      "liveReload": false,
+      "port": 8080,
+      "server": {
+        "type": "https"
+      }
+    }
+  }
+}

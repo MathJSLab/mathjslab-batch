@@ -1,0 +1,3 @@
+{
+  "include": ["batch-code-editor", "batch-output", "batch-shell"]
+}

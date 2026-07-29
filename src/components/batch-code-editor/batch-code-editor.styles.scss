@@ -1,0 +1,148 @@
+:host {
+  display: block;
+}
+
+.editor {
+  background: #fbfcfe;
+  border: 1px solid #cfd7df;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  min-height: 320px;
+  overflow: hidden;
+}
+
+.gutter {
+  background: #edf1f6;
+  border-right: 1px solid #d8dee8;
+  color: #667085;
+  font:
+    0.92rem/1.5 Consolas,
+    'SFMono-Regular',
+    'Liberation Mono',
+    Menlo,
+    monospace;
+  min-width: 3.3rem;
+  padding: 14px 10px;
+  text-align: right;
+  user-select: none;
+  white-space: pre;
+}
+
+.stack {
+  min-width: 0;
+  overflow: auto;
+  position: relative;
+}
+
+.highlight,
+.input {
+  border: 0;
+  box-sizing: border-box;
+  font:
+    0.95rem/1.5 Consolas,
+    'SFMono-Regular',
+    'Liberation Mono',
+    Menlo,
+    monospace;
+  inset: 0;
+  letter-spacing: 0;
+  margin: 0;
+  min-height: 100%;
+  min-width: 100%;
+  outline: 0;
+  overflow: hidden;
+  padding: 14px;
+  tab-size: 4;
+  white-space: pre;
+}
+
+.highlight {
+  color: #1f2937;
+  pointer-events: none;
+  position: absolute;
+}
+
+.input {
+  background: transparent;
+  caret-color: #0f172a;
+  color: transparent;
+  height: 100%;
+  min-height: 320px;
+  position: relative;
+  resize: vertical;
+}
+
+.input::selection {
+  background: rgb(59 130 246 / 30%);
+  color: transparent;
+}
+
+.hljs-keyword,
+.hljs-built_in,
+.hljs-name {
+  color: #0550ae;
+  font-weight: 650;
+}
+
+.hljs-string {
+  color: #0a7c46;
+}
+
+.hljs-number {
+  color: #9a3412;
+}
+
+.hljs-comment {
+  color: #6b7280;
+  font-style: italic;
+}
+
+.hljs-title,
+.hljs-function {
+  color: #7c3aed;
+}
+
+@media (prefers-color-scheme: dark) {
+  .editor {
+    background: #121722;
+    border-color: #344054;
+  }
+
+  .gutter {
+    background: #1b2330;
+    border-color: #344054;
+    color: #98a2b3;
+  }
+
+  .highlight {
+    color: #e5e7eb;
+  }
+
+  .input {
+    caret-color: #f8fafc;
+  }
+
+  .hljs-keyword,
+  .hljs-built_in,
+  .hljs-name {
+    color: #93c5fd;
+  }
+
+  .hljs-string {
+    color: #86efac;
+  }
+
+  .hljs-number {
+    color: #fdba74;
+  }
+
+  .hljs-comment {
+    color: #94a3b8;
+  }
+
+  .hljs-title,
+  .hljs-function {
+    color: #c4b5fd;
+  }
+}

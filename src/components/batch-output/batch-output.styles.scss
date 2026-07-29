@@ -1,0 +1,93 @@
+:host {
+  display: block;
+}
+
+.output {
+  background: #ffffff;
+  border: 1px solid #d9dee7;
+  border-radius: 8px;
+  min-height: 160px;
+  overflow: auto;
+}
+
+.placeholder {
+  color: #667085;
+  padding: 18px;
+}
+
+.list {
+  display: grid;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.entry {
+  border-top: 1px solid #edf0f5;
+  display: grid;
+  gap: 8px;
+  padding: 14px 16px;
+}
+
+.entry:first-child {
+  border-top: 0;
+}
+
+.command {
+  color: #475467;
+  font:
+    0.86rem/1.45 Consolas,
+    'SFMono-Regular',
+    'Liberation Mono',
+    Menlo,
+    monospace;
+  margin: 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.result {
+  color: #101828;
+  font:
+    0.95rem/1.5 Consolas,
+    'SFMono-Regular',
+    'Liberation Mono',
+    Menlo,
+    monospace;
+  margin: 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.error {
+  color: #b42318;
+}
+
+math {
+  font-size: 1.08rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .output {
+    background: #151a23;
+    border-color: #344054;
+  }
+
+  .placeholder,
+  .command {
+    color: #98a2b3;
+  }
+
+  .entry {
+    border-color: #283242;
+  }
+
+  .result {
+    color: #f2f4f7;
+  }
+
+  .error {
+    color: #fda29b;
+  }
+}

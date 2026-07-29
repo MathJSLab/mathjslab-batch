@@ -1,0 +1,23 @@
+<template id="batch-shell-template">
+  <section id="batch-shell-root" class="shell">
+    <header class="toolbar">
+      <div class="brand">
+        <img class="brand-logo" src="/images/mathjslab-logo.svg" alt="" aria-hidden="true" />
+        <div>
+          <h1>MathJSLab Batch</h1>
+          <p>MATLAB-style command batch runner</p>
+        </div>
+      </div>
+      <div class="status" id="batch-shell-status">Ready</div>
+    </header>
+    <main class="workspace">
+      <batch-code-editor id="batch-shell-editor"></batch-code-editor>
+      <nav class="controls" aria-label="Batch controls">
+        <button type="button" id="batch-shell-run" class="primary">Run</button>
+        <button type="button" id="batch-shell-clear-output">Clear output</button>
+        <button type="button" id="batch-shell-reset">Reset sample</button>
+      </nav>
+      <batch-output id="batch-shell-output"></batch-output>
+    </main>
+  </section>
+</template>
