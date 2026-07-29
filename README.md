@@ -4,6 +4,7 @@
 
 # [MathJSLab](https://mathjslab.com/) - [mathjslab.com](https://mathjslab.com/)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8de91465-3f1a-4348-bf3c-69d96d9a1616/deploy-status)](https://app.netlify.com/projects/mathjslab-batch/deploys)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fmathjslab.com%2F)](https://mathjslab.com/)
 [![GitHub Created At](https://img.shields.io/github/created-at/MathJSLab/mathjslab-calc)](https://github.com/MathJSLab/mathjslab-calc)
 
