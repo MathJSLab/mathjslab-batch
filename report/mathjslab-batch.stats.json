@@ -1,9 +1,9 @@
 {
   "name": "mathjslab-batch",
-  "hash": "03df25e79a84eb2b3500",
+  "hash": "8abf1942982b14abb852",
   "version": "5.109.2",
-  "time": 12764,
-  "builtAt": 1785292502404,
+  "time": 11610,
+  "builtAt": 1785293619542,
   "publicPath": "auto",
   "outputPath": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\dist",
   "assetsByChunkName": {
@@ -16,7 +16,7 @@
     {
       "type": "asset",
       "name": "mathjslab-batch.js",
-      "size": 973497,
+      "size": 949541,
       "emitted": true,
       "comparedForEmit": false,
       "cached": false,
@@ -26,7 +26,7 @@
         "related": {
           "license": "mathjslab-batch.js.LICENSE.txt"
         },
-        "size": 973497
+        "size": 949541
       },
       "chunkNames": [
         "mathjslab-batch"
@@ -112,9 +112,9 @@
       "initial": true,
       "entry": true,
       "recorded": false,
-      "size": 1041350,
+      "size": 1017392,
       "sizes": {
-        "javascript": 1040138,
+        "javascript": 1016180,
         "css/mini-extract": 353,
         "runtime": 859
       },
@@ -130,179 +130,13 @@
         "mathjslab-batch.js"
       ],
       "auxiliaryFiles": [],
-      "hash": "6a48316b4760e886f9f5",
+      "hash": "6e56ee3db36703ccff89",
       "childrenByOrder": {},
       "id": 610,
       "siblings": [],
       "parents": [],
       "children": [],
       "modules": [
-        {
-          "type": "module",
-          "moduleType": "javascript/esm",
-          "layer": null,
-          "size": 938981,
-          "sizes": {
-            "javascript": 938981
-          },
-          "built": true,
-          "codeGenerated": true,
-          "buildTimeExecuted": false,
-          "cached": false,
-          "identifier": "javascript/esm|H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab\\lib\\mathjslab.web.esm2022.js",
-          "name": "../mathjslab/lib/mathjslab.web.esm2022.js",
-          "nameForCondition": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab\\lib\\mathjslab.web.esm2022.js",
-          "index": 17,
-          "preOrderIndex": 17,
-          "index2": 14,
-          "postOrderIndex": 14,
-          "cacheable": true,
-          "optional": false,
-          "orphan": false,
-          "dependent": true,
-          "issuer": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\components\\batch-shell\\batch-shell.component.ts",
-          "issuerName": "./src/components/batch-shell/batch-shell.component.ts",
-          "issuerPath": [
-            {
-              "identifier": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\main.ts",
-              "name": "./src/main.ts",
-              "id": null
-            },
-            {
-              "identifier": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\components\\components.ts",
-              "name": "./src/components/components.ts",
-              "id": null
-            },
-            {
-              "identifier": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\components\\batch-shell\\batch-shell.component.ts",
-              "name": "./src/components/batch-shell/batch-shell.component.ts",
-              "id": null
-            }
-          ],
-          "failed": false,
-          "errors": 0,
-          "warnings": 0,
-          "id": 66,
-          "issuerId": null,
-          "chunks": [
-            610
-          ],
-          "assets": [],
-          "reasons": [
-            {
-              "moduleIdentifier": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\components\\batch-shell\\batch-shell.component.ts",
-              "module": "./src/components/batch-shell/batch-shell.component.ts",
-              "moduleName": "./src/components/batch-shell/batch-shell.component.ts",
-              "resolvedModuleIdentifier": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\components\\batch-shell\\batch-shell.component.ts",
-              "resolvedModule": "./src/components/batch-shell/batch-shell.component.ts",
-              "type": "harmony side effect evaluation",
-              "active": true,
-              "explanation": "",
-              "userRequest": "mathjslab",
-              "loc": "1:0-40",
-              "moduleId": null,
-              "resolvedModuleId": null
-            },
-            {
-              "moduleIdentifier": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\components\\batch-shell\\batch-shell.component.ts",
-              "module": "./src/components/batch-shell/batch-shell.component.ts",
-              "moduleName": "./src/components/batch-shell/batch-shell.component.ts",
-              "resolvedModuleIdentifier": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\components\\batch-shell\\batch-shell.component.ts",
-              "resolvedModule": "./src/components/batch-shell/batch-shell.component.ts",
-              "type": "harmony import specifier",
-              "active": true,
-              "explanation": "",
-              "userRequest": "mathjslab",
-              "loc": "18:18-36",
-              "moduleId": null,
-              "resolvedModuleId": null
-            },
-            {
-              "moduleIdentifier": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\main.ts|37eee8bd8496dc67f57ed6d4b683df5d",
-              "module": "./src/main.ts + 17 modules",
-              "moduleName": "./src/main.ts + 17 modules",
-              "resolvedModuleIdentifier": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\components\\batch-shell\\batch-shell.component.ts",
-              "resolvedModule": "./src/components/batch-shell/batch-shell.component.ts",
-              "type": "harmony side effect evaluation",
-              "active": true,
-              "explanation": "",
-              "userRequest": "mathjslab",
-              "loc": "1:0-40",
-              "moduleId": 441,
-              "resolvedModuleId": null
-            },
-            {
-              "moduleIdentifier": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\main.ts|37eee8bd8496dc67f57ed6d4b683df5d",
-              "module": "./src/main.ts + 17 modules",
-              "moduleName": "./src/main.ts + 17 modules",
-              "resolvedModuleIdentifier": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\components\\batch-shell\\batch-shell.component.ts",
-              "resolvedModule": "./src/components/batch-shell/batch-shell.component.ts",
-              "type": "harmony import specifier",
-              "active": true,
-              "explanation": "",
-              "userRequest": "mathjslab",
-              "loc": "18:18-36",
-              "moduleId": 441,
-              "resolvedModuleId": null
-            }
-          ],
-          "usedExports": [
-            "Interpreter"
-          ],
-          "providedExports": [
-            "AST",
-            "CallFrame",
-            "CharString",
-            "CircularReferenceError",
-            "ClassBoundMethod",
-            "ClassDefinition",
-            "ClassEmptyMethod",
-            "ClassEnumerationValue",
-            "ClassEventData",
-            "ClassEventListener",
-            "ClassInstance",
-            "ClassMember",
-            "ClassMetaClass",
-            "ClassMetaEnumerationMember",
-            "ClassMetaEvent",
-            "ClassMetaMember",
-            "ClassMetaMethod",
-            "ClassMetaObject",
-            "ClassMetaProperty",
-            "ClassPropertyEvent",
-            "ClassStaticMethod",
-            "Complex",
-            "ComplexDecimal",
-            "ComplexNumber",
-            "Configuration",
-            "Context",
-            "CoreFunctions",
-            "Decimal",
-            "EvalError",
-            "FunctionHandle",
-            "Interpreter",
-            "InterpreterError",
-            "LinearAlgebra",
-            "ManifestSourceResolver",
-            "MathML",
-            "MathOperation",
-            "MultiArray",
-            "ReferenceError",
-            "Scope",
-            "Structure",
-            "SyntaxError",
-            "TableSourceResolver",
-            "UndefinedReferenceError",
-            "doubleQuoteCharacter",
-            "singleQuoteCharacter",
-            "stringClass"
-          ],
-          "optimizationBailout": [
-            "Statement (ExpressionStatement) with side effects in source code at 2:166619-167043",
-            "ModuleConcatenation bailout: Module uses eval()"
-          ],
-          "depth": 3
-        },
         {
           "type": "module",
           "moduleType": "javascript/dynamic",
@@ -472,6 +306,172 @@
           "type": "module",
           "moduleType": "javascript/esm",
           "layer": null,
+          "size": 915023,
+          "sizes": {
+            "javascript": 915023
+          },
+          "built": true,
+          "codeGenerated": true,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "javascript/esm|H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\mathjslab\\lib\\mathjslab.web.esm2022.js",
+          "name": "./node_modules/mathjslab/lib/mathjslab.web.esm2022.js",
+          "nameForCondition": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\mathjslab\\lib\\mathjslab.web.esm2022.js",
+          "index": 17,
+          "preOrderIndex": 17,
+          "index2": 14,
+          "postOrderIndex": 14,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "dependent": true,
+          "issuer": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\components\\batch-shell\\batch-shell.component.ts",
+          "issuerName": "./src/components/batch-shell/batch-shell.component.ts",
+          "issuerPath": [
+            {
+              "identifier": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\main.ts",
+              "name": "./src/main.ts",
+              "id": null
+            },
+            {
+              "identifier": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\components\\components.ts",
+              "name": "./src/components/components.ts",
+              "id": null
+            },
+            {
+              "identifier": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\components\\batch-shell\\batch-shell.component.ts",
+              "name": "./src/components/batch-shell/batch-shell.component.ts",
+              "id": null
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": 451,
+          "issuerId": null,
+          "chunks": [
+            610
+          ],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\components\\batch-shell\\batch-shell.component.ts",
+              "module": "./src/components/batch-shell/batch-shell.component.ts",
+              "moduleName": "./src/components/batch-shell/batch-shell.component.ts",
+              "resolvedModuleIdentifier": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\components\\batch-shell\\batch-shell.component.ts",
+              "resolvedModule": "./src/components/batch-shell/batch-shell.component.ts",
+              "type": "harmony side effect evaluation",
+              "active": true,
+              "explanation": "",
+              "userRequest": "mathjslab",
+              "loc": "1:0-40",
+              "moduleId": null,
+              "resolvedModuleId": null
+            },
+            {
+              "moduleIdentifier": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\components\\batch-shell\\batch-shell.component.ts",
+              "module": "./src/components/batch-shell/batch-shell.component.ts",
+              "moduleName": "./src/components/batch-shell/batch-shell.component.ts",
+              "resolvedModuleIdentifier": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\components\\batch-shell\\batch-shell.component.ts",
+              "resolvedModule": "./src/components/batch-shell/batch-shell.component.ts",
+              "type": "harmony import specifier",
+              "active": true,
+              "explanation": "",
+              "userRequest": "mathjslab",
+              "loc": "18:18-36",
+              "moduleId": null,
+              "resolvedModuleId": null
+            },
+            {
+              "moduleIdentifier": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\main.ts|37eee8bd8496dc67f57ed6d4b683df5d",
+              "module": "./src/main.ts + 17 modules",
+              "moduleName": "./src/main.ts + 17 modules",
+              "resolvedModuleIdentifier": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\components\\batch-shell\\batch-shell.component.ts",
+              "resolvedModule": "./src/components/batch-shell/batch-shell.component.ts",
+              "type": "harmony side effect evaluation",
+              "active": true,
+              "explanation": "",
+              "userRequest": "mathjslab",
+              "loc": "1:0-40",
+              "moduleId": 441,
+              "resolvedModuleId": null
+            },
+            {
+              "moduleIdentifier": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\main.ts|37eee8bd8496dc67f57ed6d4b683df5d",
+              "module": "./src/main.ts + 17 modules",
+              "moduleName": "./src/main.ts + 17 modules",
+              "resolvedModuleIdentifier": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\ts-loader\\index.js??ruleSet[1].rules[0].use[0]!H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\src\\components\\batch-shell\\batch-shell.component.ts",
+              "resolvedModule": "./src/components/batch-shell/batch-shell.component.ts",
+              "type": "harmony import specifier",
+              "active": true,
+              "explanation": "",
+              "userRequest": "mathjslab",
+              "loc": "18:18-36",
+              "moduleId": 441,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": [
+            "Interpreter"
+          ],
+          "providedExports": [
+            "AST",
+            "CallFrame",
+            "CharString",
+            "CircularReferenceError",
+            "ClassBoundMethod",
+            "ClassDefinition",
+            "ClassEmptyMethod",
+            "ClassEnumerationValue",
+            "ClassEventData",
+            "ClassEventListener",
+            "ClassInstance",
+            "ClassMember",
+            "ClassMetaClass",
+            "ClassMetaEnumerationMember",
+            "ClassMetaEvent",
+            "ClassMetaMember",
+            "ClassMetaMethod",
+            "ClassMetaObject",
+            "ClassMetaProperty",
+            "ClassPropertyEvent",
+            "ClassStaticMethod",
+            "Complex",
+            "ComplexDecimal",
+            "ComplexNumber",
+            "Configuration",
+            "Context",
+            "CoreFunctions",
+            "Decimal",
+            "EvalError",
+            "FunctionHandle",
+            "Interpreter",
+            "InterpreterError",
+            "LinearAlgebra",
+            "ManifestSourceResolver",
+            "MathML",
+            "MathOperation",
+            "MultiArray",
+            "ReferenceError",
+            "Scope",
+            "Structure",
+            "SyntaxError",
+            "TableSourceResolver",
+            "UndefinedReferenceError",
+            "doubleQuoteCharacter",
+            "singleQuoteCharacter",
+            "stringClass"
+          ],
+          "optimizationBailout": [
+            "Statement (ExpressionStatement) with side effects in source code at 2:165617-166041",
+            "ModuleConcatenation bailout: Module uses eval()"
+          ],
+          "depth": 3
+        },
+        {
+          "type": "module",
+          "moduleType": "javascript/esm",
+          "layer": null,
           "size": 25216,
           "sizes": {
             "javascript": 25216
@@ -519,7 +519,7 @@
           "providedExports": [],
           "optimizationBailout": [
             "ModuleConcatenation bailout: Cannot concat with ./node_modules/highlight.js/lib/core.js: Module is not in strict mode",
-            "ModuleConcatenation bailout: Cannot concat with ../mathjslab/lib/mathjslab.web.esm2022.js: Module uses eval()"
+            "ModuleConcatenation bailout: Cannot concat with ./node_modules/mathjslab/lib/mathjslab.web.esm2022.js: Module uses eval()"
           ],
           "depth": 0,
           "modules": [
@@ -2597,7 +2597,7 @@
       "providedExports": [],
       "optimizationBailout": [
         "ModuleConcatenation bailout: Cannot concat with ./node_modules/highlight.js/lib/core.js: Module is not in strict mode",
-        "ModuleConcatenation bailout: Cannot concat with ../mathjslab/lib/mathjslab.web.esm2022.js: Module uses eval()"
+        "ModuleConcatenation bailout: Cannot concat with ./node_modules/mathjslab/lib/mathjslab.web.esm2022.js: Module uses eval()"
       ],
       "depth": 0,
       "modules": [
@@ -6130,17 +6130,17 @@
       "type": "module",
       "moduleType": "javascript/esm",
       "layer": null,
-      "size": 938981,
+      "size": 915023,
       "sizes": {
-        "javascript": 938981
+        "javascript": 915023
       },
       "built": true,
       "codeGenerated": true,
       "buildTimeExecuted": false,
       "cached": false,
-      "identifier": "javascript/esm|H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab\\lib\\mathjslab.web.esm2022.js",
-      "name": "../mathjslab/lib/mathjslab.web.esm2022.js",
-      "nameForCondition": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab\\lib\\mathjslab.web.esm2022.js",
+      "identifier": "javascript/esm|H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\mathjslab\\lib\\mathjslab.web.esm2022.js",
+      "name": "./node_modules/mathjslab/lib/mathjslab.web.esm2022.js",
+      "nameForCondition": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\mathjslab\\lib\\mathjslab.web.esm2022.js",
       "index": 17,
       "preOrderIndex": 17,
       "index2": 14,
@@ -6170,7 +6170,7 @@
       "failed": false,
       "errors": 0,
       "warnings": 0,
-      "id": 66,
+      "id": 451,
       "issuerId": null,
       "chunks": [
         610
@@ -6286,7 +6286,7 @@
         "stringClass"
       ],
       "optimizationBailout": [
-        "Statement (ExpressionStatement) with side effects in source code at 2:166619-167043",
+        "Statement (ExpressionStatement) with side effects in source code at 2:165617-166041",
         "ModuleConcatenation bailout: Module uses eval()"
       ],
       "depth": 3
@@ -7218,11 +7218,11 @@
         },
         {
           "name": "mathjslab-batch.js",
-          "size": 973497
+          "size": 949541
         }
       ],
       "filteredAssets": 0,
-      "assetsSize": 973851,
+      "assetsSize": 949895,
       "auxiliaryAssets": [],
       "filteredAuxiliaryAssets": 0,
       "auxiliaryAssetsSize": 0,
@@ -7244,11 +7244,11 @@
         },
         {
           "name": "mathjslab-batch.js",
-          "size": 973497
+          "size": 949541
         }
       ],
       "filteredAssets": 0,
-      "assetsSize": 973851,
+      "assetsSize": 949895,
       "auxiliaryAssets": [],
       "filteredAuxiliaryAssets": 0,
       "auxiliaryAssetsSize": 0,
@@ -7261,12 +7261,12 @@
   "errorsCount": 0,
   "warnings": [
     {
-      "message": "asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).\nThis can impact web performance.\nAssets: \n  mathjslab-batch.js (951 KiB)",
-      "stack": "AssetsOverSizeLimitWarning: asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).\nThis can impact web performance.\nAssets: \n  mathjslab-batch.js (951 KiB)\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\webpack\\lib\\performance\\SizeLimitsPlugin.js:155:7\n    at Hook.eval [as callAsync] (eval at create (H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\tapable\\lib\\HookCodeFactory.js:31:10), <anonymous>:18:1)\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\tapable\\lib\\Hook.js:21:14)\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\webpack\\lib\\Compiler.js:1100:27\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\neo-async\\async.js:2818:7\n    at done (H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\neo-async\\async.js:3522:9)\n    at Hook.eval [as callAsync] (eval at create (H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\tapable\\lib\\HookCodeFactory.js:31:10), <anonymous>:6:1)\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\webpack\\lib\\Compiler.js:927:33\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\graceful-fs\\graceful-fs.js:143:16\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\graceful-fs\\graceful-fs.js:61:14"
+      "message": "asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).\nThis can impact web performance.\nAssets: \n  mathjslab-batch.js (927 KiB)",
+      "stack": "AssetsOverSizeLimitWarning: asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).\nThis can impact web performance.\nAssets: \n  mathjslab-batch.js (927 KiB)\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\webpack\\lib\\performance\\SizeLimitsPlugin.js:155:7\n    at Hook.eval [as callAsync] (eval at create (H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\tapable\\lib\\HookCodeFactory.js:31:10), <anonymous>:18:1)\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\tapable\\lib\\Hook.js:21:14)\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\webpack\\lib\\Compiler.js:1100:27\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\neo-async\\async.js:2818:7\n    at done (H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\neo-async\\async.js:3522:9)\n    at Hook.eval [as callAsync] (eval at create (H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\tapable\\lib\\HookCodeFactory.js:31:10), <anonymous>:6:1)\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\webpack\\lib\\Compiler.js:927:33\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\graceful-fs\\graceful-fs.js:143:16\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\graceful-fs\\graceful-fs.js:61:14"
     },
     {
-      "message": "entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.\nEntrypoints:\n  mathjslab-batch (951 KiB)\n      mathjslab-batch.css\n      mathjslab-batch.js\n",
-      "stack": "EntrypointsOverSizeLimitWarning: entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.\nEntrypoints:\n  mathjslab-batch (951 KiB)\n      mathjslab-batch.css\n      mathjslab-batch.js\n\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\webpack\\lib\\performance\\SizeLimitsPlugin.js:163:7\n    at Hook.eval [as callAsync] (eval at create (H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\tapable\\lib\\HookCodeFactory.js:31:10), <anonymous>:18:1)\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\tapable\\lib\\Hook.js:21:14)\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\webpack\\lib\\Compiler.js:1100:27\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\neo-async\\async.js:2818:7\n    at done (H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\neo-async\\async.js:3522:9)\n    at Hook.eval [as callAsync] (eval at create (H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\tapable\\lib\\HookCodeFactory.js:31:10), <anonymous>:6:1)\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\webpack\\lib\\Compiler.js:927:33\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\graceful-fs\\graceful-fs.js:143:16\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\graceful-fs\\graceful-fs.js:61:14"
+      "message": "entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.\nEntrypoints:\n  mathjslab-batch (928 KiB)\n      mathjslab-batch.css\n      mathjslab-batch.js\n",
+      "stack": "EntrypointsOverSizeLimitWarning: entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.\nEntrypoints:\n  mathjslab-batch (928 KiB)\n      mathjslab-batch.css\n      mathjslab-batch.js\n\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\webpack\\lib\\performance\\SizeLimitsPlugin.js:163:7\n    at Hook.eval [as callAsync] (eval at create (H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\tapable\\lib\\HookCodeFactory.js:31:10), <anonymous>:18:1)\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\tapable\\lib\\Hook.js:21:14)\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\webpack\\lib\\Compiler.js:1100:27\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\neo-async\\async.js:2818:7\n    at done (H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\neo-async\\async.js:3522:9)\n    at Hook.eval [as callAsync] (eval at create (H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\tapable\\lib\\HookCodeFactory.js:31:10), <anonymous>:6:1)\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\webpack\\lib\\Compiler.js:927:33\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\graceful-fs\\graceful-fs.js:143:16\n    at H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\node_modules\\graceful-fs\\graceful-fs.js:61:14"
     },
     {
       "message": "webpack performance recommendations: \nYou can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.\nFor more info visit https://webpack.js.org/guides/code-splitting/",

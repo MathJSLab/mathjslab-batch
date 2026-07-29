@@ -109,7 +109,7 @@
   },
   "dependencies": {
     "highlight.js": "^11.11.1",
-    "mathjslab": "file:../mathjslab"
+    "mathjslab": "^2.2.1"
   },
   "allowScripts": {
     "esbuild": true,
