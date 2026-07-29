@@ -1,9 +1,9 @@
 {
   "name": "mathjslab-batch",
-  "hash": "8abf1942982b14abb852",
+  "hash": "9254cfba815ae056157a",
   "version": "5.109.2",
-  "time": 11610,
-  "builtAt": 1785293619542,
+  "time": 14468,
+  "builtAt": 1785341743316,
   "publicPath": "auto",
   "outputPath": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-batch\\dist",
   "assetsByChunkName": {
@@ -130,7 +130,7 @@
         "mathjslab-batch.js"
       ],
       "auxiliaryFiles": [],
-      "hash": "6e56ee3db36703ccff89",
+      "hash": "c985c6085ab2f4767fcd",
       "childrenByOrder": {},
       "id": 610,
       "siblings": [],

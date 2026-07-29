@@ -6,7 +6,10 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8de91465-3f1a-4348-bf3c-69d96d9a1616/deploy-status)](https://app.netlify.com/projects/mathjslab-batch/deploys)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fmathjslab.com%2F)](https://mathjslab.com/)
-[![GitHub Created At](https://img.shields.io/github/created-at/MathJSLab/mathjslab-calc)](https://github.com/MathJSLab/mathjslab-calc)
+[![GitHub Created At](https://img.shields.io/github/created-at/MathJSLab/mathjslab-batch)](https://github.com/MathJSLab/mathjslab-batch)
+[![MIT License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/MathJSLab/mathjslab-batch/blob/main/LICENSE)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21680709-blue?style=flat&link=https://doi.org/10.5281/zenodo.21680709)](https://doi.org/10.5281/zenodo.21680709)
+[![jsDelivr hits](https://img.shields.io/jsdelivr/gh/hy/MathJSLab/mathjslab-batch)](https://cdn.jsdelivr.net/gh/MathJSLab/mathjslab-batch/)
 
 > An [interpreter](<https://en.wikipedia.org/wiki/Interpreter_(computing)>)
 > with language syntax like
