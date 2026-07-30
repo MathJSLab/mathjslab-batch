@@ -1,6 +1,6 @@
 {
   "name": "mathjslab-batch",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "A MathJSLab batch command application.",
   "repository": {
     "type": "git",
@@ -63,7 +63,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",
-    "@11ty/eleventy-img": "^6.0.4",
+    "@11ty/eleventy-img": "^7.0.0",
     "@prettier/plugin-xml": "^3.4.2",
     "@resvg/resvg-js": "^2.6.2",
     "@types/eslint-config-prettier": "^6.11.3",
@@ -109,7 +109,7 @@
   },
   "dependencies": {
     "highlight.js": "^11.11.1",
-    "mathjslab": "^2.2.1"
+    "mathjslab": "^2.3.0"
   },
   "allowScripts": {
     "esbuild": true,
