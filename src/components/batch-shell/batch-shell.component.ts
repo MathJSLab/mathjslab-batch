@@ -1,6 +1,7 @@
 import { Interpreter, type NodeInput } from 'mathjslab';
 import styles from './batch-shell.styles.scss';
 import buildConfiguration from '../../build-configuration.json';
+import i18n from '../../i18n';
 import type WebComponentElement from '../WebComponentElement';
 import constructorFactory from '../constructorFactory';
 import createElementFactory from '../createElementFactory';
@@ -13,8 +14,13 @@ import type { BatchOutput, BatchOutputItem } from '../batch-output/batch-output.
 
 export interface BatchShellElementEntry {
   root: HTMLElement;
+  title: HTMLElement;
+  description: HTMLElement;
+  languageLabel: HTMLElement;
+  language: HTMLSelectElement;
   status: HTMLElement;
   editor: BatchCodeEditor;
+  controls: HTMLElement;
   run: HTMLButtonElement;
   clearOutput: HTMLButtonElement;
   reset: HTMLButtonElement;
@@ -22,7 +28,20 @@ export interface BatchShellElementEntry {
 }
 
 export type BatchShellElement = WebComponentElement<BatchShellElementEntry>;
-export const BatchShellElementEntryKey: (keyof BatchShellElementEntry)[] = ['root', 'status', 'editor', 'run', 'clearOutput', 'reset', 'output'] as const;
+export const BatchShellElementEntryKey: (keyof BatchShellElementEntry)[] = [
+  'root',
+  'title',
+  'description',
+  'languageLabel',
+  'language',
+  'status',
+  'editor',
+  'controls',
+  'run',
+  'clearOutput',
+  'reset',
+  'output',
+] as const;
 
 export class BatchShell extends HTMLElement {
   public static readonly tagName = 'batch-shell';
@@ -37,6 +56,8 @@ export class BatchShell extends HTMLElement {
     super();
     constructorFactory(BatchShell, styles).bind(this)();
     this.interpreter.debug = buildConfiguration.debug;
+    this.renderLanguageOptions();
+    this.setLanguage();
   }
 
   public set superId(id: string) {
@@ -68,16 +89,50 @@ export class BatchShell extends HTMLElement {
   }
 
   public connectedCallback(): void {
+    i18n.addEventListener('languagechange', this.setLanguage);
+    this.element.language.addEventListener('change', this.changeLanguage);
     this.element.run.addEventListener('click', this.run);
     this.element.clearOutput.addEventListener('click', this.clearOutput);
     this.element.reset.addEventListener('click', this.resetSample);
   }
 
   public disconnectedCallback(): void {
+    i18n.removeEventListener('languagechange', this.setLanguage);
+    this.element.language.removeEventListener('change', this.changeLanguage);
     this.element.run.removeEventListener('click', this.run);
     this.element.clearOutput.removeEventListener('click', this.clearOutput);
     this.element.reset.removeEventListener('click', this.resetSample);
   }
+
+  private renderLanguageOptions(): void {
+    this.element.language.replaceChildren();
+    for (const locale of i18n.locales) {
+      const option = document.createElement('option');
+      option.value = locale;
+      option.textContent = i18n.languageNames[locale];
+      this.element.language.append(option);
+    }
+  }
+
+  private readonly changeLanguage = (): void => {
+    i18n.setLocale(this.element.language.value);
+  };
+
+  private readonly setLanguage = (): void => {
+    i18n.applyDocumentLanguage();
+    this.element.title.textContent = i18n.page.app.title;
+    this.element.description.textContent = i18n.page.app.description;
+    this.element.languageLabel.textContent = i18n.page.shell.languageLabel;
+    this.element.language.setAttribute('aria-label', i18n.page.shell.languageLabel);
+    this.element.language.value = i18n.locale;
+    this.element.controls.setAttribute('aria-label', i18n.page.shell.controlsLabel);
+    this.element.run.textContent = i18n.page.shell.run;
+    this.element.clearOutput.textContent = i18n.page.shell.clearOutput;
+    this.element.reset.textContent = i18n.page.shell.resetSample;
+    if (!this.element.output.hasItems) {
+      this.element.status.textContent = i18n.page.shell.status.ready;
+    }
+  };
 
   private readonly run = (): void => {
     const source = this.element.editor.value;
@@ -93,12 +148,12 @@ export class BatchShell extends HTMLElement {
         });
       }
       this.element.output.setItems(items);
-      this.element.status.textContent = `Finished: ${items.length} statement${items.length === 1 ? '' : 's'}`;
+      this.element.status.textContent = i18n.format('shell.status.finished', { count: items.length });
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
       items.push({ command: source.trim(), html: this.escapeHTML(message), error: true });
       this.element.output.setItems(items);
-      this.element.status.textContent = 'Stopped with error';
+      this.element.status.textContent = i18n.page.shell.status.error;
       if (this.interpreter.debug) {
         throw error;
       }
@@ -107,7 +162,7 @@ export class BatchShell extends HTMLElement {
 
   private readonly clearOutput = (): void => {
     this.element.output.clear();
-    this.element.status.textContent = 'Ready';
+    this.element.status.textContent = i18n.page.shell.status.ready;
     this.element.editor.focus();
   };
 

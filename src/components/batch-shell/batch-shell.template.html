@@ -4,15 +4,21 @@
       <div class="brand">
         <img class="brand-logo" src="/images/mathjslab-logo.svg" alt="" aria-hidden="true" />
         <div>
-          <h1>MathJSLab Batch</h1>
-          <p>MATLAB-style command batch runner</p>
+          <h1 id="batch-shell-title">MathJSLab Batch</h1>
+          <p id="batch-shell-description">MATLAB-style command batch runner</p>
         </div>
       </div>
-      <div class="status" id="batch-shell-status">Ready</div>
+      <div class="toolbar-actions">
+        <label class="language-select">
+          <span id="batch-shell-language-label">Language</span>
+          <select id="batch-shell-language"></select>
+        </label>
+        <div class="status" id="batch-shell-status">Ready</div>
+      </div>
     </header>
     <main class="workspace">
       <batch-code-editor id="batch-shell-editor"></batch-code-editor>
-      <nav class="controls" aria-label="Batch controls">
+      <nav id="batch-shell-controls" class="controls" aria-label="Batch controls">
         <button type="button" id="batch-shell-run" class="primary">Run</button>
         <button type="button" id="batch-shell-clear-output">Clear output</button>
         <button type="button" id="batch-shell-reset">Reset sample</button>

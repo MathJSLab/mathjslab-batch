@@ -1,6 +1,7 @@
 import hljs from 'highlight.js/lib/core';
 import matlab from 'highlight.js/lib/languages/matlab';
 import styles from './batch-code-editor.styles.scss';
+import i18n from '../../i18n';
 import type WebComponentElement from '../WebComponentElement';
 import constructorFactory from '../constructorFactory';
 import createElementFactory from '../createElementFactory';
@@ -65,12 +66,15 @@ export class BatchCodeEditor extends HTMLElement {
   }
 
   public connectedCallback(): void {
+    i18n.addEventListener('languagechange', this.setLanguage);
     this.element.input.addEventListener('input', this.input);
     this.element.input.addEventListener('scroll', this.syncScroll);
+    this.setLanguage();
     this.render();
   }
 
   public disconnectedCallback(): void {
+    i18n.removeEventListener('languagechange', this.setLanguage);
     this.element.input.removeEventListener('input', this.input);
     this.element.input.removeEventListener('scroll', this.syncScroll);
   }
@@ -91,6 +95,10 @@ export class BatchCodeEditor extends HTMLElement {
   private readonly input = (): void => {
     this.render();
     this.dispatchEvent(new Event('input', { bubbles: true, composed: true }));
+  };
+
+  private readonly setLanguage = (): void => {
+    this.element.input.setAttribute('aria-label', i18n.page.editor.ariaLabel);
   };
 
   private readonly syncScroll = (): void => {

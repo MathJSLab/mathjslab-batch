@@ -53,6 +53,30 @@ p,
   font-size: 0.86rem;
 }
 
+.toolbar-actions {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+
+.language-select {
+  align-items: center;
+  color: #475467;
+  display: flex;
+  font-size: 0.82rem;
+  gap: 7px;
+}
+
+.language-select select {
+  background: #ffffff;
+  border: 1px solid #cfd7df;
+  border-radius: 7px;
+  color: #1d2939;
+  font: inherit;
+  height: 34px;
+  padding: 0 28px 0 10px;
+}
+
 .workspace {
   display: grid;
   gap: 12px;
@@ -116,6 +140,16 @@ button.primary:hover {
     font-size: 0.78rem;
   }
 
+  .toolbar-actions {
+    flex-wrap: wrap;
+  }
+
+  .language-select select {
+    height: 32px;
+    max-width: 120px;
+    padding-left: 8px;
+  }
+
   .workspace {
     padding: 10px;
   }
@@ -139,6 +173,16 @@ button.primary:hover {
   p,
   .status {
     color: #98a2b3;
+  }
+
+  .language-select {
+    color: #cbd5e1;
+  }
+
+  .language-select select {
+    background: #20242b;
+    border-color: #475467;
+    color: #f2f4f7;
   }
 
   button {

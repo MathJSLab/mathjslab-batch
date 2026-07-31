@@ -1,4 +1,5 @@
 import styles from './batch-output.styles.scss';
+import i18n from '../../i18n';
 import type WebComponentElement from '../WebComponentElement';
 import constructorFactory from '../constructorFactory';
 import createElementFactory from '../createElementFactory';
@@ -33,6 +34,7 @@ export class BatchOutput extends HTMLElement {
   public constructor() {
     super();
     constructorFactory(BatchOutput, styles).bind(this)();
+    this.setLanguage();
   }
 
   public set superId(id: string) {
@@ -63,6 +65,18 @@ export class BatchOutput extends HTMLElement {
     return this.element.container;
   }
 
+  public connectedCallback(): void {
+    i18n.addEventListener('languagechange', this.setLanguage);
+  }
+
+  public disconnectedCallback(): void {
+    i18n.removeEventListener('languagechange', this.setLanguage);
+  }
+
+  public get hasItems(): boolean {
+    return this.element.list.childElementCount > 0;
+  }
+
   public clear(): void {
     this.element.list.replaceChildren();
     this.element.placeholder.hidden = false;
@@ -72,6 +86,10 @@ export class BatchOutput extends HTMLElement {
     this.element.list.replaceChildren(...items.map((item) => this.createItem(item)));
     this.element.placeholder.hidden = items.length > 0;
   }
+
+  private readonly setLanguage = (): void => {
+    this.element.placeholder.textContent = i18n.page.output.placeholder;
+  };
 
   private createItem(item: BatchOutputItem): HTMLLIElement {
     const entry = document.createElement('li');
