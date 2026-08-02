@@ -1,6 +1,6 @@
-import { Interpreter, type NodeInput } from 'mathjslab';
+import type { NodeInput } from 'mathjslab';
 import styles from './batch-shell.styles.scss';
-import buildConfiguration from '../../build-configuration.json';
+import { appEngine } from '../../appEngine';
 import i18n from '../../i18n';
 import type WebComponentElement from '../WebComponentElement';
 import constructorFactory from '../constructorFactory';
@@ -12,6 +12,9 @@ import setIdFirstFactory from '../setIdFirstFactory';
 import type { BatchCodeEditor } from '../batch-code-editor/batch-code-editor.component';
 import type { BatchOutput, BatchOutputItem } from '../batch-output/batch-output.component';
 
+/**
+ * Shadow DOM element map for the batch shell.
+ */
 export interface BatchShellElementEntry {
   root: HTMLElement;
   title: HTMLElement;
@@ -43,6 +46,9 @@ export const BatchShellElementEntryKey: (keyof BatchShellElementEntry)[] = [
   'output',
 ] as const;
 
+/**
+ * Main application shell that coordinates editing, batch execution, and output.
+ */
 export class BatchShell extends HTMLElement {
   public static readonly tagName = 'batch-shell';
   public readonly element = {} as BatchShellElement;
@@ -50,12 +56,10 @@ export class BatchShell extends HTMLElement {
   public static readonly elementPostfix = keyToPostfix(BatchShellElementEntryKey);
   public static readonly null = null as unknown as BatchShell;
   public static readonly undefined = undefined as unknown as BatchShell;
-  private readonly interpreter = Interpreter.Create({});
 
   public constructor() {
     super();
     constructorFactory(BatchShell, styles).bind(this)();
-    this.interpreter.debug = buildConfiguration.debug;
     this.renderLanguageOptions();
     this.setLanguage();
   }
@@ -88,6 +92,9 @@ export class BatchShell extends HTMLElement {
     return this.element.container;
   }
 
+  /**
+   * Register event listeners after the shell is connected.
+   */
   public connectedCallback(): void {
     i18n.addEventListener('languagechange', this.setLanguage);
     this.element.language.addEventListener('change', this.changeLanguage);
@@ -96,6 +103,9 @@ export class BatchShell extends HTMLElement {
     this.element.reset.addEventListener('click', this.resetSample);
   }
 
+  /**
+   * Remove event listeners registered by `connectedCallback`.
+   */
   public disconnectedCallback(): void {
     i18n.removeEventListener('languagechange', this.setLanguage);
     this.element.language.removeEventListener('change', this.changeLanguage);
@@ -104,6 +114,9 @@ export class BatchShell extends HTMLElement {
     this.element.reset.removeEventListener('click', this.resetSample);
   }
 
+  /**
+   * Populate the language selector from the i18n service.
+   */
   private renderLanguageOptions(): void {
     this.element.language.replaceChildren();
     for (const locale of i18n.locales) {
@@ -114,10 +127,16 @@ export class BatchShell extends HTMLElement {
     }
   }
 
+  /**
+   * Change the shared application language from the selector value.
+   */
   private readonly changeLanguage = (): void => {
-    i18n.setLocale(this.element.language.value);
+    appEngine.setLanguage(this.element.language.value);
   };
 
+  /**
+   * Apply localized shell text and document metadata.
+   */
   private readonly setLanguage = (): void => {
     i18n.applyDocumentLanguage();
     this.element.title.textContent = i18n.page.app.title;
@@ -134,14 +153,17 @@ export class BatchShell extends HTMLElement {
     }
   };
 
+  /**
+   * Execute all statements in the editor as a batch.
+   */
   private readonly run = (): void => {
     const source = this.element.editor.value;
     const items: BatchOutputItem[] = [];
     try {
       const parsed = this.parseStatements(source);
       for (const command of parsed.statements) {
-        const tree = this.interpreter.Parse(command);
-        const evaluated = this.interpreter.Evaluate(tree);
+        const tree = appEngine.interpreter.Parse(command);
+        const evaluated = appEngine.interpreter.Evaluate(tree);
         items.push({
           command,
           html: this.formatResult(tree, evaluated),
@@ -154,27 +176,39 @@ export class BatchShell extends HTMLElement {
       items.push({ command: source.trim(), html: this.escapeHTML(message), error: true });
       this.element.output.setItems(items);
       this.element.status.textContent = i18n.page.shell.status.error;
-      if (this.interpreter.debug) {
+      if (appEngine.interpreter.debug) {
         throw error;
       }
     }
   };
 
+  /**
+   * Clear the output panel and restore the ready status.
+   */
   private readonly clearOutput = (): void => {
     this.element.output.clear();
     this.element.status.textContent = i18n.page.shell.status.ready;
     this.element.editor.focus();
   };
 
+  /**
+   * Restore the starter source code sample.
+   */
   private readonly resetSample = (): void => {
     this.element.editor.value = ['A = [1 2; 3 4];', 'b = [5; 6];', 'x = A \\ b', 'sin(pi / 6)'].join('\n');
     this.clearOutput();
   };
 
+  /**
+   * Split parsed multiline source into executable statement snippets.
+   *
+   * @param input Full editor source.
+   * @returns Extracted statements plus original source lines.
+   */
   private parseStatements(input: string): { statements: string[]; lines: string[] } {
     const statements: string[] = [];
     const lines = input.split(/\r?\n/);
-    const tree = this.interpreter.Parse(input);
+    const tree = appEngine.interpreter.Parse(input);
     for (let i = 0; i < tree.list.length; i++) {
       const node = tree.list[i]!;
       if (node.stop.line === node.start.line) {
@@ -190,6 +224,14 @@ export class BatchShell extends HTMLElement {
     return { statements: statements.filter((statement) => statement.trim().length > 0), lines };
   }
 
+  /**
+   * Extract one multiline statement from source lines using parser positions.
+   *
+   * @param lines Original source split by line.
+   * @param list Parsed statement nodes.
+   * @param index Statement index to extract.
+   * @returns Source text corresponding to the parsed statement.
+   */
   private getMultilineStatement(lines: string[], list: NodeInput[], index: number): string {
     const node = list[index]!;
     let result = '';
@@ -209,17 +251,30 @@ export class BatchShell extends HTMLElement {
     return result;
   }
 
+  /**
+   * Format one input/result pair as MathML output.
+   *
+   * @param input Parsed input node.
+   * @param evaluated Evaluated result node.
+   * @returns HTML fragment containing MathML markup.
+   */
   private formatResult(input: NodeInput, evaluated: NodeInput): string {
-    const inputText = this.interpreter.Unparse(input);
-    const resultText = this.interpreter.Unparse(evaluated);
-    const inputMath = this.interpreter.UnparseMathML(input);
-    const resultMath = this.interpreter.UnparseMathML(evaluated);
+    const inputText = appEngine.interpreter.Unparse(input);
+    const resultText = appEngine.interpreter.Unparse(evaluated);
+    const inputMath = appEngine.interpreter.UnparseMathML(input);
+    const resultMath = appEngine.interpreter.UnparseMathML(evaluated);
     if (inputText === resultText) {
       return `<table><tr><td>${inputMath}</td></tr></table>`;
     }
     return `<table><tr><td>${inputMath}</td><td><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mo>=</mo></math></td><td>${resultMath}</td></tr></table>`;
   }
 
+  /**
+   * Escape plain text for safe insertion into HTML output.
+   *
+   * @param value Text value to escape.
+   * @returns Escaped HTML string.
+   */
   private escapeHTML(value: string): string {
     const text = document.createTextNode(value);
     const wrapper = document.createElement('div');

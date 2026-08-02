@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file. This
 project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.0.6
+
+- Added the shared `appEngine` bootstrap model used by MathJSLab applications.
+- Added centralized `InterpreterConfiguration` with locale-specific aliases.
+- Fixed initial locale detection to honor the browser language preference list.
+- Added JSDoc and inline documentation for the batch shell, editor, output,
+  i18n, and interpreter services.
+- Updated prepublication metadata and commit message configuration.
+
 ## 0.0.5
 
 - Multilanguage support.

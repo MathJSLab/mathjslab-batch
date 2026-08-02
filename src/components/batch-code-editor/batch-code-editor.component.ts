@@ -12,6 +12,9 @@ import setIdFirstFactory from '../setIdFirstFactory';
 
 hljs.registerLanguage('matlab', matlab);
 
+/**
+ * Shadow DOM element map for the batch code editor.
+ */
 export interface BatchCodeEditorElementEntry {
   root: HTMLElement;
   gutter: HTMLElement;
@@ -23,6 +26,9 @@ export interface BatchCodeEditorElementEntry {
 export type BatchCodeEditorElement = WebComponentElement<BatchCodeEditorElementEntry>;
 export const BatchCodeEditorElementEntryKey: (keyof BatchCodeEditorElementEntry)[] = ['root', 'gutter', 'stack', 'highlight', 'input'] as const;
 
+/**
+ * MATLAB-style code editor with line numbers and syntax highlighting.
+ */
 export class BatchCodeEditor extends HTMLElement {
   public static readonly tagName = 'batch-code-editor';
   public readonly element = {} as BatchCodeEditorElement;
@@ -65,6 +71,9 @@ export class BatchCodeEditor extends HTMLElement {
     return this.element.container;
   }
 
+  /**
+   * Wire editor events after the component is connected to the document.
+   */
   public connectedCallback(): void {
     i18n.addEventListener('languagechange', this.setLanguage);
     this.element.input.addEventListener('input', this.input);
@@ -73,21 +82,33 @@ export class BatchCodeEditor extends HTMLElement {
     this.render();
   }
 
+  /**
+   * Remove event listeners registered by `connectedCallback`.
+   */
   public disconnectedCallback(): void {
     i18n.removeEventListener('languagechange', this.setLanguage);
     this.element.input.removeEventListener('input', this.input);
     this.element.input.removeEventListener('scroll', this.syncScroll);
   }
 
+  /**
+   * Current editor source text.
+   */
   public get value(): string {
     return this.element.input.value;
   }
 
+  /**
+   * Current editor source text.
+   */
   public set value(value: string) {
     this.element.input.value = value;
     this.render();
   }
 
+  /**
+   * Move keyboard focus to the editable text area.
+   */
   public focus(): void {
     this.element.input.focus();
   }
@@ -97,15 +118,24 @@ export class BatchCodeEditor extends HTMLElement {
     this.dispatchEvent(new Event('input', { bubbles: true, composed: true }));
   };
 
+  /**
+   * Keep translated accessibility labels synchronized with i18n.
+   */
   private readonly setLanguage = (): void => {
     this.element.input.setAttribute('aria-label', i18n.page.editor.ariaLabel);
   };
 
+  /**
+   * Keep the highlight layer and line gutter aligned with textarea scrolling.
+   */
   private readonly syncScroll = (): void => {
     this.element.highlight.style.transform = `translate(${-this.element.input.scrollLeft}px, ${-this.element.input.scrollTop}px)`;
     this.element.gutter.style.transform = `translateY(${-this.element.input.scrollTop}px)`;
   };
 
+  /**
+   * Render syntax highlighting and line numbers for the current source.
+   */
   private render(): void {
     const code = this.value;
     const highlighted = hljs.highlight(code || ' ', { language: 'matlab', ignoreIllegals: true }).value;
