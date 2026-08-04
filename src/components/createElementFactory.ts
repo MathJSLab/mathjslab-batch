@@ -8,13 +8,13 @@ import WebComponentType from './WebComponentType';
  * @returns Function that creates the custom element and optionally assigns an id.
  */
 const createElementFactory = <T extends HTMLElement>(component: WebComponentType<T>): ((id?: string) => T & WebComponentInterface<T>) => {
-  return (id?: string): T & WebComponentInterface<T> => {
-    const element = document.createElement(component.tagName) as T & WebComponentInterface<T>;
-    if (id) {
-      element.setId(id);
-    }
-    return element;
-  };
+    return (id?: string): T & WebComponentInterface<T> => {
+        const element = document.createElement(component.tagName) as T & WebComponentInterface<T>;
+        if (id) {
+            element.setId(id);
+        }
+        return element;
+    };
 };
 export { createElementFactory };
 export default createElementFactory;
