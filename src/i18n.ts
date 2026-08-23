@@ -1,4 +1,7 @@
 import { IntlMessageFormat } from 'intl-messageformat';
+import en from '../data/i18n-en';
+import es from '../data/i18n-es';
+import pt from '../data/i18n-pt';
 
 type Locale = 'en' | 'es' | 'pt';
 type MessageTree = string | MessageTree[] | { [key: string]: MessageTree };
@@ -8,87 +11,9 @@ type MessageValues = Parameters<IntlMessageFormat['format']>[0];
  * Localized UI copy used by the batch application shell and child components.
  */
 const source = {
-  en: {
-    locale: 'en',
-    htmlLang: 'en',
-    languageName: 'English',
-    app: {
-      title: 'MathJSLab Batch',
-      description: 'MATLAB-style command batch runner',
-    },
-    shell: {
-      languageLabel: 'Language',
-      controlsLabel: 'Batch controls',
-      run: 'Run',
-      clearOutput: 'Clear output',
-      resetSample: 'Reset sample',
-      status: {
-        ready: 'Ready',
-        finished: 'Finished: {count, plural, one {# statement} other {# statements}}',
-        error: 'Stopped with error',
-      },
-    },
-    editor: {
-      ariaLabel: 'MATLAB batch commands',
-    },
-    output: {
-      placeholder: 'Output will appear here.',
-    },
-  },
-  es: {
-    locale: 'es',
-    htmlLang: 'es',
-    languageName: 'Español',
-    app: {
-      title: 'MathJSLab Batch',
-      description: 'Ejecutor de lotes de comandos con sintaxis tipo MATLAB',
-    },
-    shell: {
-      languageLabel: 'Idioma',
-      controlsLabel: 'Controles del lote',
-      run: 'Ejecutar',
-      clearOutput: 'Limpiar salida',
-      resetSample: 'Restaurar ejemplo',
-      status: {
-        ready: 'Listo',
-        finished: 'Finalizado: {count, plural, one {# sentencia} other {# sentencias}}',
-        error: 'Interrumpido por error',
-      },
-    },
-    editor: {
-      ariaLabel: 'Comandos MATLAB en lote',
-    },
-    output: {
-      placeholder: 'La salida aparecerá aquí.',
-    },
-  },
-  pt: {
-    locale: 'pt',
-    htmlLang: 'pt-BR',
-    languageName: 'Português',
-    app: {
-      title: 'MathJSLab Batch',
-      description: 'Executor de lote de comandos com sintaxe MATLAB',
-    },
-    shell: {
-      languageLabel: 'Idioma',
-      controlsLabel: 'Controles do lote',
-      run: 'Executar',
-      clearOutput: 'Limpar saída',
-      resetSample: 'Restaurar exemplo',
-      status: {
-        ready: 'Pronto',
-        finished: 'Concluído: {count, plural, one {# comando} other {# comandos}}',
-        error: 'Interrompido por erro',
-      },
-    },
-    editor: {
-      ariaLabel: 'Comandos MATLAB em lote',
-    },
-    output: {
-      placeholder: 'A saída aparecerá aqui.',
-    },
-  },
+  en,
+  es,
+  pt,
 } as const;
 
 const locales = Object.keys(source) as Locale[];
@@ -130,19 +55,19 @@ const firstSupportedLocale = (locales: Iterable<string | null | undefined>): Loc
  * @param locale Locale used by `intl-messageformat`.
  * @returns Formatted copy tree.
  */
-const formatValue = (value: MessageTree, locale: Locale): any => {
+const formatValue = (value: MessageTree, locale: Locale, key = ''): any => {
   if (typeof value === 'string') {
-    if (value.includes('{')) {
+    if (key.endsWith('Html') || value.includes('{')) {
       return value;
     }
     return new IntlMessageFormat(value, locale).format();
   }
 
   if (Array.isArray(value)) {
-    return value.map((entry) => formatValue(entry, locale));
+    return value.map((entry) => formatValue(entry, locale, key));
   }
 
-  return Object.fromEntries(Object.entries(value).map(([key, entry]) => [key, formatValue(entry, locale)]));
+  return Object.fromEntries(Object.entries(value).map(([entryKey, entry]) => [entryKey, formatValue(entry, locale, entryKey)]));
 };
 
 const pages = Object.fromEntries(Object.entries(source).map(([locale, values]) => [locale, formatValue(values, locale as Locale)])) as Record<Locale, any>;
