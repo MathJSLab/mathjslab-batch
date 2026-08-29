@@ -8,6 +8,7 @@ export default {
   app: {
     title: 'MathJSLab Batch',
     description: 'Ejecutor de lotes de comandos con sintaxis tipo MATLAB',
+    noscript: 'JavaScript debe estar habilitado para ejecutar MathJSLab Batch.',
   },
   shell: {
     languageLabel: 'Idioma',

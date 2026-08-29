@@ -8,6 +8,7 @@ export default {
   app: {
     title: 'MathJSLab Batch',
     description: 'MATLAB-style command batch runner',
+    noscript: 'JavaScript must be enabled to run MathJSLab Batch.',
   },
   shell: {
     languageLabel: 'Language',
